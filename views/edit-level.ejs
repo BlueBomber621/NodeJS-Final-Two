@@ -1,0 +1,25 @@
+<section class="greeting-area">
+  <a href="/" class="back-link">&lt; Back</a>
+</section>
+<section class="add-area">
+  <h2>Edit Level</h2>
+  <form action="/editlevel/<%= data._id %>?_method=PUT" method="POST">
+    <label for="name"><b>Level Name</b></label>
+    <input type="text" name="name" id="name" value="<%= data.name %>" />
+
+    <label for="difficulty"><b>Level Difficulty</b></label>
+    <input
+      type="number"
+      name="difficulty"
+      id="difficulty"
+      min="1"
+      max="10"
+      value="<%= data.difficulty %>"
+    />
+
+    <label for="completed"><b>Completed Level?</b></label>
+    <input type="checkbox" name="completed" id="completed" />
+
+    <input type="submit" value="Save" />
+  </form>
+</section>
