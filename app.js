@@ -3,6 +3,8 @@ require("dotenv").config();
 const expressLayouts = require("express-ejs-layouts");
 const express = require("express");
 const cors = require("cors");
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./swagger.json");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,6 +21,7 @@ app.set("layout", "./layouts/main");
 app.set("view engine", "ejs");
 
 app
+  .use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument))
   .use(cors())
   .use(express.json())
   .use((req, res, next) => {
