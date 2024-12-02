@@ -37,6 +37,28 @@ router.get("/", async (req, res) => {
   }
 });
 
+// show one page
+router.get("/:id", async (req, res) => {
+  try {
+    locals = {
+      title: "See Level",
+      description: "A site for tracking Geometry Dash progress",
+    };
+
+    let perPage = 10000;
+    let page = req.query.page || 1;
+
+    const element = await Object.findOne({ _id: req.params.id });
+
+    res.render("show-one.ejs", {
+      locals,
+      element,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 // addlevel page
 router.get("/addlevel", async (req, res) => {
   try {

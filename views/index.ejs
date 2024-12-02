@@ -20,6 +20,7 @@
     </div>
     <div style="display: flex">
       <a href="/editlevel/<%= element._id %>" class="edit-btn">Edit Level</a>
+      <a href="/<%= element._id %>" class="show-btn">Show Level</a>
       <form
         action="/deletelevel/<%= element._id %>?_method=DELETE"
         method="post"

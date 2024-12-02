@@ -1,0 +1,21 @@
+<section class="greeting-area">
+  <a href="/" class="back-link">&lt; Back</a>
+</section>
+<section class="show-area">
+  <div class="show-spot">
+    <% if (element.completed == "on") { %>
+    <div style="display: flex">
+      <h2 class="level-name" style="height: 29px"><%= element.name %></h2>
+      <img
+        src="/img/checkmark.png"
+        alt="checkmark"
+        style="max-width: 28px; height: 28px"
+      />
+    </div>
+    <p>Difficulty: <%= element.difficulty %></p>
+    <% } else { %>
+    <h2 class="level-name"><%= element.name %></h2>
+    <p>Difficulty: <%= element.difficulty %></p>
+    <% } %>
+  </div>
+</section>
